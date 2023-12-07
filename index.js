@@ -8,7 +8,13 @@ inquirer
         type: 'input',
         name: 'text',
         message: 'Enter up to three characters for the logo:',
-        validate: input => input.length <= 3
+        validate: input => {
+            if (input.length <= 3) {
+                return true;
+            } else {
+                return 'Please enter no more than three characters.';
+            }
+        }
     },
     {
         type: 'input',
@@ -37,9 +43,9 @@ inquirer
         square: new Square(answers.shapeColor)
     };
 
-    const svgContent = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+    const svgContent = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         ${shapeMap[answers.shape].render()}
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${answers.textColor}" font-size="40">${answers.text}</text>
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>
     </svg>`;
 
     fs.writeFileSync(`./examples/${filename}`, svgContent);
