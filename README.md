@@ -4,10 +4,10 @@ This Node.js command-line application allows users to generate simple SVG logos.
 
 
 
-![Gif demo of NodeLogoGen](presentation.gif)
+![Gif demo of NodeLogoGen](/gif/NodeLogoGen.gif)
 
 
-[You can see video here](https://)
+[You can see video here](https://drive.google.com/file/d/1KNmrf6OW0CmbhUVGk21YOJeQWDRh6FUC/view)
 
 
 ## Table of Contents
